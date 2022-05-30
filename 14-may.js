@@ -132,3 +132,5 @@ function multiplyMatrix(matrix1, matrix2, r1, c1, r2, c2) {
     }
     return result;
 }
+
+var col_sum = A.reduce((A, B) => A.map((X, idx) => X + B[idx])); 
