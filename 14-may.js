@@ -134,3 +134,10 @@ function multiplyMatrix(matrix1, matrix2, r1, c1, r2, c2) {
 }
 
 var col_sum = A.reduce((A, B) => A.map((X, idx) => X + B[idx])); 
+
+
+let arr = [1,2,3,4, false];
+
+!arr[4]
+
+!(4 in arr)
