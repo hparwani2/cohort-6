@@ -1,6 +1,12 @@
 //[1, 5, 7, 8, 9, 14, 10]
 
 // when last is pivot
+
+/*         
+1 4 2 8 12 9 13
+
+pivot = 8
+*/
 function partitionEnd(arr, low, high) {
 
     let pivot = arr[high];
@@ -15,6 +21,8 @@ function partitionEnd(arr, low, high) {
     return i;
 }
 
+/*
+*/
 function partitionMiddle(arr, low, high) {
     let pivot = arr[parseInt((low+high)/2)];
     let start = low;
@@ -25,13 +33,17 @@ function partitionMiddle(arr, low, high) {
         }
         while(arr[end] > pivot) {
             end--;
+        } 
+        if(arr[start] === arr[end]) {
+            start++
+            end--;
         }
         swap(arr, start, end);
     }
     return end;
 }
 
-let arr = [1, 10, 14,5,9, 7, 8];
+// let arr = [1, 10, 14,5,9, 7, 8];
 //partitionFirst(arr, 0, arr.length-1);
 
 function swap(arr, l, r) {
@@ -40,6 +52,12 @@ function swap(arr, l, r) {
     arr[r] = temp;
 }
 
+/*
+1 2 4 8 9 12 13
+
+
+
+*/
 function quickSort(arr, low, high) {
 
     if(low>=high)
@@ -48,7 +66,10 @@ function quickSort(arr, low, high) {
     quickSort(arr, low, partitionIndex-1);
     quickSort(arr, partitionIndex+1, high);
 }
+let arr = [1, 3, 4, 2, 1, 2];
 
+quickSort(arr, 0, arr.length-1);
+console.log(arr);
 
 
 function quickSelect(arr, k, low, high) {
@@ -62,6 +83,6 @@ function quickSelect(arr, k, low, high) {
         return quickSelect(arr, k, low, partitionIndex-1);
     }
 }
-console.log(quickSelect(arr, 2, 0, arr.length-1));
+//console.log(quickSelect(arr, 2, 0, arr.length-1));
 
 //

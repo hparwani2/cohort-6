@@ -39,9 +39,15 @@ mergeSort(arr, 0, arr.length-1);
 console.log(arr);
 
 //console.log(result);
+/*
+
+l = 0
+r = 6
+m = 3
+*/
 
 function mergeSort(arr, left, right) {
-    if(left>=right) {
+    if(left===right) {
         return;
     }
     let mid = parseInt((left+right)/2);
@@ -50,6 +56,15 @@ function mergeSort(arr, left, right) {
     merge(arr, left, mid, right);
 }
 
+/*
+    c
+2 8 9 20
+
+        m
+5 6 7 8
+
+2 5 6 7 8 8
+*/
 function merge(arr, left, mid, right) {
     let n1 = mid - left + 1;
     let n2 = right - mid;
