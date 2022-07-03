@@ -1,5 +1,5 @@
 function lexographicalPrinting(i, n) {
-    if(i < n) {
+    if(i <= n) {
         console.log(i);
 
         lexographicalPrinting(i*10, n);
